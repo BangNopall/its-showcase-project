@@ -9,7 +9,7 @@ export function PersonaSection() {
         <SectionHeader
           eyebrow="Target Users"
           title="Built Around the Roles That Actually Use It"
-          description="The product supports public users, administrative submitters, and IT Solutions reviewers without flattening their needs into one generic flow."
+          description="Website ini melayani kebutuhan mahasiswa, pengelola kegiatan, dan administrator melalui fitur yang terintegrasi namun tetap menyesuaikan tanggung jawab setiap pengguna."
           align="center"
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-3">

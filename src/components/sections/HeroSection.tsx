@@ -32,7 +32,7 @@ export function HeroSection() {
             />
           </div>
           <h1 className="font-heading text-5xl font-medium leading-[1.04] md:text-7xl">
-            Website BEM FILKOM UB Showcase
+            Website BEM FILKOM UB
           </h1>
           <p className="mt-6 max-w-2xl text-xl leading-9 text-white/76 md:text-2xl">
             Digital Information Hub & Event Management Platform

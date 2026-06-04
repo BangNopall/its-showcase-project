@@ -11,7 +11,7 @@ export function FeatureSection() {
         <SectionHeader
           eyebrow="Feature Highlight"
           title="A Showcase of Public, Admin, and Workflow Capabilities"
-          description="Each feature is positioned as part of one product ecosystem: content publication, event request, approval, registration, and access control."
+          description="Setiap fitur terintegrasi dalam satu ekosistem digital yang mencakup publikasi informasi, pengajuan kegiatan, verifikasi kesesuaian SOP, manajemen berita, registrasi peserta, serta pengelolaan hak akses pengguna."
           align="center"
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">

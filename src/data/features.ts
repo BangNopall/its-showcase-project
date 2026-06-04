@@ -33,14 +33,8 @@ export const features = [
   {
     title: "Approval Workflow",
     description:
-      "Review event dengan status Approved, Rejected, atau Need Revision disertai feedback yang jelas.",
+      "Review event dengan status Approved, Rejected, atau Revision disertai feedback yang jelas.",
     icon: BadgeCheck,
-  },
-  {
-    title: "Admin Dashboard",
-    description:
-      "Ruang kerja untuk mengelola request, status pengajuan, monitoring, dan feedback event.",
-    icon: MonitorCog,
   },
   {
     title: "Open Recruitment",
@@ -51,8 +45,20 @@ export const features = [
   {
     title: "News Publication",
     description:
-      "Publikasi berita dengan list, detail, search, filter, tag, share, pinned, draft, schedule, dan pagination.",
+      "Sistem publikasi berita dengan fitur daftar dan detail berita, pencarian, filter, berbagi artikel, pinned post, pengelolaan draft, dan penjadwalan publikasi.",
     icon: Newspaper,
+  },
+    {
+    title: "Detail News",
+    description:
+      "Halaman artikel lengkap dengan metadata, gambar utama, konten, share button, dan rekomendasi berita lain.",
+    icon: FileText,
+  },
+  {
+    title: "Admin Dashboard",
+    description:
+      "Ruang kerja untuk mengelola request, status pengajuan, monitoring, dan feedback event.",
+    icon: MonitorCog,
   },
   {
     title: "Role-Based Access Control",
@@ -66,30 +72,24 @@ export const features = [
       "Tampilan dirancang nyaman untuk desktop, projector, tablet, dan mobile.",
     icon: Smartphone,
   },
-  {
-    title: "Detail News",
-    description:
-      "Halaman artikel lengkap dengan metadata, gambar utama, konten, share button, dan rekomendasi berita lain.",
-    icon: FileText,
-  },
 ];
 
 export const problemPoints = [
-  "Informasi organisasi belum terpusat.",
-  "Pengajuan event masih manual.",
-  "Approval event membutuhkan alur yang lebih jelas.",
-  "Status pengajuan belum transparan.",
+  "Informasi organisasi belum terkelola secara terpusat.",
+  "Proses pengajuan event belum terintegrasi dalam satu sistem.",
+  "Proses approval event belum memiliki alur yang terstandarisasi.",
+  "Transparansi terhadap progres pengajuan masih perlu ditingkatkan.",
   "Publikasi berita dan event perlu sistem yang lebih mudah dikelola.",
   "Mahasiswa membutuhkan akses informasi yang cepat dan responsif.",
 ];
 
 export const impactPoints = [
-  "Informasi organisasi lebih terpusat.",
-  "Pengajuan event lebih terstruktur.",
-  "Approval event lebih transparan.",
-  "Publikasi berita dan event lebih profesional.",
-  "Mahasiswa lebih mudah mengakses informasi.",
-  "Website menjadi portofolio nyata kemampuan teknis internal organisasi.",
+  "Informasi organisasi terpusat dan mudah diakses.",
+  "Pengajuan event menjadi lebih efisien dan terstruktur.",
+  "Transparansi proses dan status pengajuan meningkat.",
+  "Pengelolaan berita dan event lebih mudah dilakukan.",
+  "Penyebaran informasi menjadi lebih cepat dan konsisten.",
+  "Pengalaman mahasiswa dalam mengakses informasi menjadi lebih baik.",
 ];
 
 export const challengePoints = [

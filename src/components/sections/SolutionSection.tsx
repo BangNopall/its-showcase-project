@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function SolutionSection() {
-  const flow = ["Public Information", "Event Request", "Approval", "News", "Registration"];
+  const flow = ["Public Information", "Event Request", "Event Review", "News", "Open Recruitment"];
 
   return (
     <AnimatedSection id="solution" className="bg-[#1F6778] text-[#FDFDFF]">
@@ -12,7 +12,7 @@ export function SolutionSection() {
         <SectionHeader
           eyebrow="Solution"
           title="An Integrated Digital Platform for Organization Workflows"
-          description="Website BEM FILKOM UB menghubungkan informasi publik, pengajuan event, approval, berita, dan registrasi dalam satu platform yang mudah dipresentasikan dan dikembangkan."
+          description="Website BEM FILKOM UB dirancang untuk menyatukan seluruh kebutuhan organisasi, mulai dari penyebaran informasi, pengajuan event, publikasi berita, hingga registrasi peserta dalam satu platform yang modern, efisien, dan mudah digunakan."
           theme="dark"
         />
         <div className="rounded-[32px] border border-white/14 bg-white/8 p-6 shadow-2xl shadow-black/12 backdrop-blur-md">

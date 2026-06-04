@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Website BEM FILKOM UB Showcase",
+  title: "Website BEM FILKOM UB",
   description:
     "Interactive digital product showcase for Website BEM FILKOM UB by IT Solutions Bureau — SGE/BEM FILKOM UB.",
 };

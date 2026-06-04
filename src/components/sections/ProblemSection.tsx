@@ -10,7 +10,7 @@ export function ProblemSection() {
         <SectionHeader
           eyebrow="Problem"
           title="The Workflow Needed a Clearer Digital Backbone"
-          description="Sebelum platform ini, beberapa proses penting masih tersebar dan belum cukup transparan untuk kebutuhan organisasi yang bergerak cepat."
+          description="Sebelum adanya platform ini, proses pendaftaran, publikasi informasi, dan pengelolaan kegiatan masih dilakukan melalui berbagai saluran yang terpisah, sehingga kurang mendukung kebutuhan organisasi yang dinamis."
           align="center"
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

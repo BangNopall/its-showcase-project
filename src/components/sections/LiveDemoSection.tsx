@@ -13,8 +13,8 @@ export function LiveDemoSection() {
           <div>
             <SectionHeader
               eyebrow="Live Demo Flow"
-              title="Presenter-Friendly Flow for a 7-10 Minute Showcase"
-              description="The live demo starts from public discovery, then moves into event preview and admin management before returning to impact."
+              title="Live Demo Flow Showcasing User Journey and Admin Management"
+              description="Demo dimulai dari akses informasi publik oleh pengguna, dilanjutkan dengan eksplorasi fitur utama, serta diakhiri dengan pengelolaan sistem dan konten melalui dashboard admin."
               theme="dark"
             />
             <div className="mt-8 grid gap-3">

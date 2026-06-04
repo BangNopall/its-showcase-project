@@ -10,7 +10,7 @@ export function NewsShowcaseSection() {
         <SectionHeader
           eyebrow="News Publication"
           title="Structured Publication for Organization Updates"
-          description="News flow supports discovery, detail reading, sharing, and content management needs without making the public experience feel administrative."
+          description="Alur berita dirancang untuk memudahkan pengguna menemukan, membaca, dan membagikan informasi, sekaligus mendukung pengelolaan konten secara efektif oleh administrator."
         />
         <div className="mt-12">
           <ScreenshotShowcase
@@ -30,8 +30,8 @@ export function NewsShowcaseSection() {
             ]}
             points={[
               "Search dan filter membantu mahasiswa menemukan berita yang relevan.",
-              "Detail berita menjaga struktur metadata, gambar utama, isi artikel, dan share button.",
-              "Latest news dan pagination membuat publikasi organisasi lebih mudah ditelusuri.",
+              "Halaman berita menyajikan informasi secara lengkap melalui metadata, gambar utama, isi artikel, dan fitur berbagi.",
+              "Latest news serta kategori dan tag berita memudahkan pengguna menjelajahi informasi organisasi.",
               "Fitur draft, schedule, pinned, dan summary dashboard disiapkan untuk kebutuhan admin.",
             ]}
           />

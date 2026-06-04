@@ -11,7 +11,7 @@ export function WebsiteOverviewSection() {
         <SectionHeader
           eyebrow="Website Overview"
           title="Homepage as the Main Information Hub"
-          description="Landing page menjadi pintu masuk untuk identitas organisasi, latest events, latest news, navigasi utama, dan akses arsip informasi."
+          description="Landing Page Halaman utama yang menampilkan identitas organisasi, event terbaru, berita terkini, navigasi utama, dan akses cepat ke berbagai informasi penting."
           align="center"
         />
         <div className="mt-12">

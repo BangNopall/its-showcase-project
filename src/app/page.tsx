@@ -38,13 +38,13 @@ export default function Home() {
         <NewsShowcaseSection />
         <EventRequestSection />
         <AdminPortalSection />
-        <DevelopmentProcessSection />
-        <ProgressHighlightSection />
+        {/* <DevelopmentProcessSection />
+        <ProgressHighlightSection /> */}
         <TechStackSection />
         <LiveDemoSection />
         <ImpactSection />
-        <ChallengesSection />
-        <FutureImprovementSection />
+        {/* <ChallengesSection />
+        <FutureImprovementSection /> */}
         <ClosingSection />
       </main>
       <Footer />

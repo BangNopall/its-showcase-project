@@ -11,7 +11,7 @@ export function TechStackSection() {
         <SectionHeader
           eyebrow="Tech Stack"
           title="A Modern Web Foundation for Product Showcase and Deployment"
-          description="The stack is chosen for maintainable presentation UI, future Vercel deployment, and realistic integration with backend services."
+          description="Teknologi yang digunakan dirancang untuk memastikan kemudahan pengelolaan, pengembangan berkelanjutan, dan integrasi sistem yang optimal."
           theme="dark"
           align="center"
         />

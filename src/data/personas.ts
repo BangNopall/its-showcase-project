@@ -17,7 +17,7 @@ export const personas = [
   },
   {
     role: "General User / Mahasiswa",
-    goal: "Cari informasi event, berita, dan daftar open recruitment.",
+    goal: "Mencari informasi event, berita, dan daftar open recruitment.",
     pain: "Informasi tersebar dan sulit diakses.",
     needs: "Website yang cepat, simpel, dan mobile-friendly.",
     icon: Crown,
