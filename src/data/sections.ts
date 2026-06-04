@@ -1,0 +1,31 @@
+export const sectionNav = [
+  { id: "hero", label: "Home" },
+  { id: "background", label: "Context" },
+  { id: "features", label: "Features" },
+  { id: "overview", label: "Showcase" },
+  { id: "development", label: "Process" },
+  { id: "live-demo", label: "Demo" },
+  { id: "impact", label: "Impact" },
+  { id: "closing", label: "Closing" },
+];
+
+export const allSectionIds = [
+  "hero",
+  "background",
+  "problem",
+  "solution",
+  "personas",
+  "features",
+  "overview",
+  "news",
+  "event-request",
+  "admin-portal",
+  "development",
+  "progress",
+  "tech-stack",
+  "live-demo",
+  "impact",
+  "challenges",
+  "future",
+  "closing",
+];

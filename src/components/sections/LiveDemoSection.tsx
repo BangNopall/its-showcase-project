@@ -1,0 +1,40 @@
+import { DemoStepCard } from "@/components/ui/DemoStepCard";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Button } from "@/components/ui/Button";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { demoFlow, demoLinks } from "@/data/demoFlow";
+
+export function LiveDemoSection() {
+  return (
+    <AnimatedSection id="live-demo" className="bg-[#1F6778] text-[#FDFDFF]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(87,212,221,0.24),transparent_30%),radial-gradient(circle_at_84%_82%,rgba(242,183,5,0.16),transparent_28%)]" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <SectionHeader
+              eyebrow="Live Demo Flow"
+              title="Presenter-Friendly Flow for a 7-10 Minute Showcase"
+              description="The live demo starts from public discovery, then moves into event preview and admin management before returning to impact."
+              theme="dark"
+            />
+            <div className="mt-8 grid gap-3">
+              {demoLinks.map((link) => (
+                <Button key={link.url} href={link.url} variant="accent" external className="justify-between">
+                  {link.label}
+                </Button>
+              ))}
+              <p className="text-sm leading-6 text-white/58">
+                Backup mode uses the local screenshot showcase if the live website or admin portal is not safe to display.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {demoFlow.map((step, index) => (
+              <DemoStepCard key={step.title} index={index} {...step} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
