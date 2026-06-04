@@ -19,17 +19,17 @@ export function FeatureCard({
       className={cn(
         "group rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1",
         theme === "light" &&
-          "border-[#1F6778]/14 bg-white/78 shadow-xl shadow-[#1F6778]/6 backdrop-blur-md hover:border-[#57D4DD]/45 hover:shadow-[#1F6778]/12",
+          "card-surface card-light border-[var(--card-border)] shadow-xl shadow-[rgba(var(--primary-900-rgb),0.06)] backdrop-blur-md hover:border-[rgba(var(--primary-900-rgb),0.45)] hover:shadow-[rgba(var(--primary-900-rgb),0.12)]",
         theme === "dark" &&
-          "border-white/12 bg-white/7 shadow-xl shadow-black/10 backdrop-blur-md hover:border-[#57D4DD]/34",
+          "card-surface card-dark border-[rgba(255,255,255,0.12)] shadow-xl shadow-black/10 backdrop-blur-md hover:border-[rgba(var(--primary-900-rgb),0.34)]",
       )}
     >
       <div
         className={cn(
           "mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl transition group-hover:scale-105",
           theme === "light"
-            ? "bg-[#1F6778]/10 text-[#1F6778]"
-            : "bg-[#57D4DD]/12 text-[#57D4DD]",
+            ? "bg-[rgba(var(--primary-900-rgb),0.08)] text-[var(--primary-900)]"
+            : "bg-[rgba(var(--primary-900-rgb),0.12)] text-[var(--primary-200)]",
         )}
       >
         <Icon className="h-6 w-6" aria-hidden="true" />
@@ -37,7 +37,7 @@ export function FeatureCard({
       <h3
         className={cn(
           "font-heading text-xl font-medium leading-tight",
-          theme === "light" ? "text-[#393D3F]" : "text-[#FDFDFF]",
+          theme === "light" ? "text-[var(--text-default)]" : "text-[var(--color-white)]",
         )}
       >
         {title}
@@ -45,7 +45,7 @@ export function FeatureCard({
       <p
         className={cn(
           "mt-3 text-sm leading-7",
-          theme === "light" ? "text-[#393D3F]/68" : "text-white/66",
+          theme === "light" ? "text-[var(--text-muted)]" : "text-white/66",
         )}
       >
         {description}

@@ -33,7 +33,7 @@ export function ClosingSection() {
           Website BEM FILKOM UB bukan hanya sebuah media informasi, tetapi juga bentuk komitmen IT Solutions Bureau dalam membangun ekosistem digital organisasi yang lebih profesional, terstruktur, transparan, dan berkelanjutan.
         </p>
         <div className="mt-10 flex justify-center">
-          <Button href="#hero" variant="accent">
+          <Button href="#itsolutions" variant="accent">
             Back to Start
           </Button>
         </div>

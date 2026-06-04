@@ -1,15 +1,17 @@
 export const sectionNav = [
-  { id: "hero", label: "Home" },
-  { id: "background", label: "Context" },
+  { id: "itsolutions", label: "Home" },
+  { id: "hero", label: "Context" },
   { id: "features", label: "Features" },
   { id: "overview", label: "Showcase" },
-  { id: "development", label: "Process" },
   { id: "live-demo", label: "Demo" },
   { id: "impact", label: "Impact" },
-  { id: "closing", label: "Closing" },
 ];
 
 export const allSectionIds = [
+  "it-mengenal",
+  "it-visi-misi",
+  "it-proker",
+  "it-workflow",
   "hero",
   "background",
   "problem",
@@ -20,12 +22,12 @@ export const allSectionIds = [
   "news",
   "event-request",
   "admin-portal",
-  "development",
-  "progress",
+  // "development",
+  // "progress",
   "tech-stack",
   "live-demo",
   "impact",
-  "challenges",
-  "future",
+  // "challenges",
+  // "future",
   "closing",
 ];

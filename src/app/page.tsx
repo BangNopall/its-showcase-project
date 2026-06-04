@@ -20,6 +20,12 @@ import { Footer } from "@/components/ui/Footer";
 import { KeyboardNavigation } from "@/components/ui/KeyboardNavigation";
 import { Navbar } from "@/components/ui/Navbar";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import {
+  ItMengenalSection,
+  ItVisiMisiSection,
+  ItProkerSection,
+  ItWorkflowSection
+} from "@/components/sections/ItSolutionsSection";
 
 export default function Home() {
   return (
@@ -28,6 +34,10 @@ export default function Home() {
       <KeyboardNavigation />
       <Navbar />
       <main>
+        <ItMengenalSection />
+        <ItVisiMisiSection />
+        <ItProkerSection />
+        <ItWorkflowSection />
         <HeroSection />
         <BackgroundSection />
         <ProblemSection />
