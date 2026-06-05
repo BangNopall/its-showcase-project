@@ -15,7 +15,7 @@ export const features = [
   {
     title: "Landing Page",
     description:
-      "Pintu masuk utama untuk identitas BEM FILKOM UB, highlight informasi, latest events, dan latest news.",
+      "Pintu masuk utama untuk identitas SGE FILKOM UB, highlight informasi, latest events, dan latest news.",
     icon: LayoutDashboard,
   },
   {

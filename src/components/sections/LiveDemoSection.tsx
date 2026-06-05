@@ -23,9 +23,6 @@ export function LiveDemoSection() {
                   {link.label}
                 </Button>
               ))}
-              <p className="text-sm leading-6 text-white/58">
-                Backup mode uses the local screenshot showcase if the live website or admin portal is not safe to display.
-              </p>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">

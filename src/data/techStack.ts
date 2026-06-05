@@ -12,7 +12,7 @@ import {
 export const techStack = [
   {
     name: "Next.js",
-    detail: "App Router foundation for future Vercel deployment.",
+    detail: "Using modern web framework for production deployment.",
     icon: Boxes,
   },
   {
@@ -47,7 +47,7 @@ export const techStack = [
   },
   {
     name: "Deployment",
-    detail: "Production target at bemfilkom.ub.ac.id and Vercel-ready hosting.",
+    detail: "Production target at bemfilkom.ub.ac.id and ready hosting.",
     icon: Rocket,
   },
 ];

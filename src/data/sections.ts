@@ -9,7 +9,6 @@ export const sectionNav = [
 
 export const allSectionIds = [
   "it-mengenal",
-  "it-visi-misi",
   "it-proker",
   "it-workflow",
   "hero",
