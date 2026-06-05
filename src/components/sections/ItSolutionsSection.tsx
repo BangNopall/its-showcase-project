@@ -4,14 +4,11 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import {
-  Laptop,
   Palette,
   Cpu,
   Code,
   BarChart3,
-  Lightbulb,
   Users,
-  Target,
   Globe,
   Smartphone,
   Ticket,
@@ -106,27 +103,6 @@ const stats = [
   { value: 3, label: "Frontend Dev", icon: Code, color: "text-aqua" },
   { value: 2, label: "UI/UX Designer", icon: Palette, color: "text-yellow" },
   { value: 2, label: "Project Manager", icon: BarChart3, color: "text-aqua" },
-];
-
-const keyResults = [
-  {
-    value: 90,
-    suffix: "%",
-    label: "Project Selesai Tepat Waktu",
-    desc: "Komitmen ketat pada timeline pengembangan demi keandalan organisasi.",
-  },
-  {
-    value: 2,
-    suffix: "+",
-    label: "Solusi Digital Baru",
-    desc: "Produk aplikasi pendukung yang dikembangkan khusus bagi mahasiswa.",
-  },
-  {
-    value: 1,
-    suffix: "",
-    label: "Proyek Eksternal Selesai",
-    desc: "Kemitraan strategis pembuatan website yang sukses dituntaskan.",
-  },
 ];
 
 const programs = [

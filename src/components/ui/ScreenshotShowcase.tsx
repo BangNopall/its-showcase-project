@@ -26,15 +26,19 @@ export function ScreenshotShowcase({
     >
       <div className={cn("grid gap-5", reverse && "lg:order-2")}>
         {screenshots.map((screenshot, index) => (
-          <BrowserMockup
+          <div
             key={screenshot.src}
-            {...screenshot}
+            data-cinematic-mockup
             className={cn(index === 1 && "lg:ml-16")}
-            imageClassName={screenshots.length > 1 ? "object-cover" : undefined}
-          />
+          >
+            <BrowserMockup
+              {...screenshot}
+              imageClassName={screenshots.length > 1 ? "object-cover" : undefined}
+            />
+          </div>
         ))}
       </div>
-      <div className={cn("rounded-[28px] border border-[#1F6778]/14 bg-white/76 p-6 shadow-xl shadow-[#1F6778]/8 backdrop-blur-md", reverse && "lg:order-1")}>
+      <div data-cinematic-card className={cn("rounded-[28px] border border-[#1F6778]/14 bg-white/76 p-6 shadow-xl shadow-[#1F6778]/8 backdrop-blur-md", reverse && "lg:order-1")}>
         <div className="mb-5 h-1.5 w-16 rounded-full bg-gradient-to-r from-[#F2B705] to-[#57D4DD]" />
         <ul className="grid gap-4">
           {points.map((point) => (

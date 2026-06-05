@@ -14,7 +14,7 @@ export function DemoStepCard({
   icon: Icon,
 }: DemoStepCardProps) {
   return (
-    <article className="relative rounded-[24px] border border-white/12 bg-white/7 p-5 shadow-xl shadow-black/10 backdrop-blur-md">
+    <article data-cinematic-card className="relative rounded-[24px] border border-white/12 bg-white/7 p-5 shadow-xl shadow-black/10 backdrop-blur-md">
       <div className="mb-4 flex items-center justify-between gap-3">
         <span className="font-heading text-sm font-medium text-[#F2B705]">
           Step {String(index + 1).padStart(2, "0")}

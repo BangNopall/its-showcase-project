@@ -6,7 +6,7 @@ import { demoFlow, demoLinks } from "@/data/demoFlow";
 
 export function LiveDemoSection() {
   return (
-    <AnimatedSection id="live-demo" className="bg-[#1F6778] text-[#FDFDFF]">
+    <AnimatedSection id="live-demo" data-cinematic-section className="bg-[#1F6778] text-[#FDFDFF]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(87,212,221,0.24),transparent_30%),radial-gradient(circle_at_84%_82%,rgba(242,183,5,0.16),transparent_28%)]" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">

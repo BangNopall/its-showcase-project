@@ -4,9 +4,7 @@ import {
   ExternalLink,
   FileText,
   Home,
-  Newspaper,
   Search,
-  ShieldCheck,
 } from "lucide-react";
 
 export const demoLinks = [

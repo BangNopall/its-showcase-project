@@ -16,6 +16,7 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <article
+      data-cinematic-card
       className={cn(
         "group rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1",
         theme === "light" &&

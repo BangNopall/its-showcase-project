@@ -5,7 +5,7 @@ import { features } from "@/data/features";
 
 export function FeatureSection() {
   return (
-    <AnimatedSection id="features" className="bg-[#FDFDFF]">
+    <AnimatedSection id="features" data-cinematic-section className="bg-[#FDFDFF]">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,239,211,0.72),rgba(253,253,255,1))]" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader

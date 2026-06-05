@@ -8,7 +8,8 @@ export function HeroSection() {
       id="hero"
       tabIndex={-1}
       aria-label="hero"
-      className="relative min-h-screen w-full overflow-hidden bg-[var(--neutral-900)] px-5 pb-20 pt-32 text-[var(--color-white)] md:px-8 md:pb-24 md:pt-36 flex flex-col justify-center snap-start snap-always"
+      data-cinematic-section
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--neutral-900)] px-5 pb-20 pt-32 text-[var(--color-white)] md:px-8 md:pb-24 md:pt-36 flex flex-col justify-center snap-start snap-always"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(87,212,221,0.22),transparent_34%),radial-gradient(circle_at_88%_78%,rgba(242,183,5,0.18),transparent_32%)]" />
       <div className="absolute inset-0 opacity-12 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:520px]" />
@@ -51,7 +52,9 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        <Framer3DShowcase />
+        <div data-cinematic-visual>
+          <Framer3DShowcase />
+        </div>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ The site presents Website BEM FILKOM UB as a digital product: a centralized info
 - TypeScript
 - Tailwind CSS
 - Framer Motion
+- GSAP ScrollTrigger
 - lucide-react
 - next/image
 
@@ -93,6 +94,15 @@ You can adjust:
 - Depth and tilt: `rotateX`, `rotateY`, `translateX`, and `translateY`
 
 No Spline scene is required. This keeps the hero lightweight, easier to maintain, and safer for projector presentation.
+
+## Animation Architecture
+
+The cinematic scroll layer is documented in `docs/animation-plan.md`.
+
+- Framer Motion handles section reveal, card reveal, hover states, buttons, and small UI transitions.
+- GSAP ScrollTrigger handles desktop-only cinematic scroll moments for the hero, feature cards, screenshot mockups, and live demo cards.
+- GSAP is isolated in `src/components/ui/CinematicScroll.tsx` and runs only after hydration.
+- `prefers-reduced-motion` disables the GSAP cinematic layer.
 
 ## Deploy to Vercel
 

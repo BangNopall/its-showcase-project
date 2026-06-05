@@ -43,7 +43,7 @@ export function Navbar() {
           extraNavClass
         )}
       >
-          <Link href="#it-mengenal" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]">
+          <Link href="#hero" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]">
             <span className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[var(--color-cream)]">
             <Image
               src="/assets/logos/sge-logo-symbol-teal.png"
@@ -68,8 +68,8 @@ export function Navbar() {
               key={item.id}
               href={`#${item.id}`}
               className={cn(
-                  "rounded-full px-3 py-2 text-xs font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--text-on-primary)]",
-                  active === item.id && item.id === "hero" && "nav-link-active",
+                  "rounded-full px-3 py-2 text-xs font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--primary-900)]",
+                  active === item.id && "nav-link-active",
                 )}
             >
               {item.label}
@@ -111,8 +111,8 @@ export function Navbar() {
               href={`#${item.id}`}
               onClick={() => setOpen(false)}
               className={cn(
-                "rounded-2xl px-4 py-3 text-sm font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--text-on-primary)]",
-                active === item.id && item.id === "hero" && "nav-link-active",
+                "rounded-2xl px-4 py-3 text-sm font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--primary-900)]",
+                active === item.id && "nav-link-active",
               )}
             >
               {item.label}

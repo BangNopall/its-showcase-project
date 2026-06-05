@@ -2,27 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { allSectionIds } from "@/data/sections";
-
-const sectionLabels: Record<string, string> = {
-  "it-mengenal": "IT Solutions",
-  "it-proker": "Program Kerja",
-  "it-workflow": "Workflow",
-  hero: "Context",
-  background: "Background",
-  problem: "Problem",
-  solution: "Solution",
-  personas: "Personas",
-  features: "Features",
-  overview: "Overview",
-  news: "News",
-  "event-request": "Event Request",
-  "admin-portal": "Admin Portal",
-  "tech-stack": "Tech Stack",
-  "live-demo": "Live Demo",
-  impact: "Impact",
-  closing: "Closing",
-};
+import { allSectionIds, sectionLabels } from "@/data/sections";
 
 export function SectionIndicator() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -34,19 +14,37 @@ export function SectionIndicator() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Track the active section
+  // Track the active section using distance-based detection for reliability
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) {
-          const idx = allSectionIds.indexOf(visible.target.id);
-          if (idx !== -1) setCurrentSection(idx);
+        // Instead of relying solely on intersectionRatio, find the section
+        // whose center is closest to the viewport center for more reliable
+        // detection of shorter sections like NewsShowcase.
+        const viewportCenter = window.innerHeight / 2;
+        let closestIdx = currentSection;
+        let closestDist = Infinity;
+
+        allSectionIds.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          // Only consider sections at least partially visible
+          if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+          const sectionCenter = rect.top + rect.height / 2;
+          const dist = Math.abs(sectionCenter - viewportCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = idx;
+          }
+        });
+
+        if (closestIdx !== currentSection) {
+          setCurrentSection(closestIdx);
         }
       },
-      { rootMargin: "-30% 0px -50% 0px", threshold: [0.1, 0.3, 0.6] },
+      // Wider rootMargin so shorter sections aren't missed
+      { rootMargin: "-10% 0px -10% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] },
     );
 
     allSectionIds.forEach((id) => {
@@ -55,14 +53,55 @@ export function SectionIndicator() {
     });
 
     return () => observer.disconnect();
+  }, [currentSection]);
+
+  // Also track on scroll for sections that might not trigger IntersectionObserver
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const viewportCenter = window.innerHeight / 2;
+        let closestIdx = 0;
+        let closestDist = Infinity;
+
+        allSectionIds.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          const sectionCenter = rect.top + rect.height / 2;
+          const dist = Math.abs(sectionCenter - viewportCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = idx;
+          }
+        });
+
+        setCurrentSection(closestIdx);
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navigateToSection = (index: number) => {
     const id = allSectionIds[index];
     const el = document.getElementById(id);
     if (el) {
+      // Temporarily disable scroll-snap to prevent fighting with scrollIntoView
+      const htmlEl = document.documentElement;
+      htmlEl.style.scrollSnapType = "none";
+
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setTimeout(() => el.focus({ preventScroll: true }), 400);
+
+      setTimeout(() => {
+        htmlEl.style.scrollSnapType = "";
+        el.focus({ preventScroll: true });
+      }, 700);
+
       setCurrentSection(index);
     }
   };

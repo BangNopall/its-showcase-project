@@ -5,7 +5,7 @@ import { screenshotPaths } from "@/lib/utils";
 
 export function EventRequestSection() {
   return (
-    <AnimatedSection id="event-request" className="bg-[#FFEFD3] section-bg-3">
+    <AnimatedSection id="event-request" data-cinematic-section className="bg-[#FFEFD3] section-bg-3">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Event Request"

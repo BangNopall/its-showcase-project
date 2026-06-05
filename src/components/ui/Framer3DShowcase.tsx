@@ -135,6 +135,7 @@ export function Framer3DShowcase() {
       </motion.div>
 
       <motion.div
+        data-cinematic-float
         className="absolute right-6 top-6 z-20 hidden items-center gap-3 rounded-2xl border border-white/14 bg-[#393D3F]/76 px-4 py-3 text-[#FDFDFF] shadow-xl shadow-black/16 backdrop-blur-xl md:flex"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
@@ -150,6 +151,7 @@ export function Framer3DShowcase() {
         return (
           <motion.div
             key={node.label}
+            data-cinematic-float
             className={`absolute z-20 hidden w-[210px] rounded-2xl border border-white/14 bg-[#393D3F]/78 p-4 text-[#FDFDFF] shadow-xl shadow-black/16 backdrop-blur-xl md:block ${node.className}`}
             animate={{ y: [0, node.delay % 1 ? 9 : -9, 0], rotate: [0, node.delay % 1 ? -1.5 : 1.5, 0] }}
             transition={{

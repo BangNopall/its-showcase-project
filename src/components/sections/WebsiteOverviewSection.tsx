@@ -5,7 +5,7 @@ import { screenshotPaths } from "@/lib/utils";
 
 export function WebsiteOverviewSection() {
   return (
-    <AnimatedSection id="overview" className="bg-[#FFEFD3] section-bg-4">
+    <AnimatedSection id="overview" data-cinematic-section className="bg-[#FFEFD3] section-bg-4">
       <div className="absolute inset-0 opacity-30 [background-image:url('/assets/patterns/pattern-cream.png')] [background-size:540px]" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
@@ -14,7 +14,7 @@ export function WebsiteOverviewSection() {
           description="Landing Page Halaman utama yang menampilkan identitas organisasi, event terbaru, berita terkini, navigasi utama, dan akses cepat ke berbagai informasi penting."
           align="center"
         />
-        <div className="mt-12">
+        <div className="mt-12" data-cinematic-mockup>
           <BrowserMockup
             src={screenshotPaths.landing}
             alt="Landing page screenshot of Website BEM FILKOM UB"

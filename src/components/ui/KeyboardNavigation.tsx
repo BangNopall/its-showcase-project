@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { allSectionIds } from "@/data/sections";
+import { allSectionIds, sectionLabels } from "@/data/sections";
 
 /**
  * Finds the index of the section currently closest to viewport center.
@@ -55,16 +55,27 @@ export function KeyboardNavigation() {
   // Track active section via IntersectionObserver for the indicator
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) {
-          const idx = allSectionIds.indexOf(visible.target.id);
-          if (idx !== -1) setCurrentSection(idx);
-        }
+      () => {
+        const viewportCenter = window.innerHeight / 2;
+        let closestIdx = 0;
+        let closestDist = Infinity;
+
+        allSectionIds.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+          const sectionCenter = rect.top + rect.height / 2;
+          const dist = Math.abs(sectionCenter - viewportCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = idx;
+          }
+        });
+
+        setCurrentSection(closestIdx);
       },
-      { rootMargin: "-30% 0px -50% 0px", threshold: [0.1, 0.3, 0.6] },
+      { rootMargin: "-10% 0px -10% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] },
     );
 
     allSectionIds.forEach((id) => {
@@ -81,9 +92,20 @@ export function KeyboardNavigation() {
     const el = document.getElementById(targetId);
 
     if (el) {
+      // Temporarily disable scroll-snap to prevent it from fighting with
+      // scrollIntoView. Mandatory snap causes a "double correction" jump
+      // when the smooth scroll position triggers snap recalculation.
+      const htmlEl = document.documentElement;
+      htmlEl.style.scrollSnapType = "none";
+
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      // Focus the section for accessibility after scroll settles
-      setTimeout(() => el.focus({ preventScroll: true }), 400);
+
+      // Re-enable snap after scroll settles, then focus for accessibility
+      setTimeout(() => {
+        htmlEl.style.scrollSnapType = "";
+        el.focus({ preventScroll: true });
+      }, 700);
+
       setCurrentSection(clamped);
       // Show the indicator briefly on navigation
       setShowIndicator(true);
@@ -141,27 +163,6 @@ export function KeyboardNavigation() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [hintDismissed, navigateToSection]);
 
-  // Build section labels for the indicator
-  const sectionLabels: Record<string, string> = {
-    "it-mengenal": "IT Solutions",
-    "it-proker": "Program Kerja",
-    "it-workflow": "Workflow",
-    hero: "Context",
-    background: "Background",
-    problem: "Problem",
-    solution: "Solution",
-    personas: "Personas",
-    features: "Features",
-    overview: "Overview",
-    news: "News",
-    "event-request": "Event Request",
-    "admin-portal": "Admin Portal",
-    "tech-stack": "Tech Stack",
-    "live-demo": "Live Demo",
-    impact: "Impact",
-    closing: "Closing",
-  };
-
   return (
     <>
       {/* Onboarding hint toast */}
@@ -197,53 +198,6 @@ export function KeyboardNavigation() {
               </button>
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Floating section indicator (right side dots) */}
-      <AnimatePresence>
-        {showIndicator && (
-          <motion.nav
-            initial={{ opacity: 0, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 12 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            aria-label="Section navigation"
-            className="fixed right-4 top-1/2 z-[60] hidden -translate-y-1/2 flex-col items-end gap-2 lg:flex"
-          >
-            {allSectionIds.map((id, idx) => {
-              const isActive = idx === currentSection;
-              return (
-                <button
-                  key={id}
-                  onClick={() => navigateToSection(idx)}
-                  className="group flex items-center gap-2 focus:outline-none"
-                  aria-label={`Navigate to ${sectionLabels[id] ?? id}`}
-                  aria-current={isActive ? "true" : undefined}
-                >
-                  {/* Label — visible on active or hover */}
-                  <span
-                    className={`text-[10px] font-semibold tracking-wide transition-all duration-300 ${
-                      isActive
-                        ? "translate-x-0 text-[#57D4DD] opacity-100"
-                        : "translate-x-2 text-white/0 opacity-0 group-hover:translate-x-0 group-hover:text-white/60 group-hover:opacity-100"
-                    }`}
-                  >
-                    {sectionLabels[id] ?? id}
-                  </span>
-
-                  {/* Dot */}
-                  <span
-                    className={`block shrink-0 rounded-full transition-all duration-300 ${
-                      isActive
-                        ? "h-2.5 w-2.5 bg-[#57D4DD] shadow-[0_0_8px_rgba(87,212,221,0.5)]"
-                        : "h-1.5 w-1.5 bg-white/30 group-hover:bg-white/60"
-                    }`}
-                  />
-                </button>
-              );
-            })}
-          </motion.nav>
         )}
       </AnimatePresence>
     </>
