@@ -10,7 +10,11 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [active, setActive] = useState("hero");
   const [open, setOpen] = useState(false);
-  const isContextActive = active === "hero";
+  // Map each section id to a specific navbar style class (only hero gets context style)
+  const navClassMap: Record<string, string> = {
+    hero: "nav-context",
+  };
+  const extraNavClass = navClassMap[active] || "";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,10 +40,10 @@ export function Navbar() {
       <nav
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-2xl shadow-black/15 backdrop-blur-2xl nav-surface",
-          isContextActive && "nav-context",
+          extraNavClass
         )}
       >
-          <Link href="#hero" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]">
+          <Link href="#it-mengenal" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]">
             <span className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[var(--color-cream)]">
             <Image
               src="/assets/logos/sge-logo-symbol-teal.png"
@@ -96,10 +100,10 @@ export function Navbar() {
 
       {open ? (
         <div
-          className={cn(
-            "mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl p-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden nav-surface",
-            isContextActive && "nav-context",
-          )}
+            className={cn(
+              "mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl p-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden nav-surface",
+              extraNavClass
+            )}
         >
           {sectionNav.map((item) => (
             <Link

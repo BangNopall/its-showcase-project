@@ -150,17 +150,16 @@ const programs = [
     icon: Ticket,
     desc: "Layanan pembuatan website event dan open recruitment untuk seluruh kementerian dan biro BEM.",
     workflow: [
-      "Request Website",
-      "Requirement Gathering",
-      "Design UI/UX",
-      "Development",
-      "Testing",
-      "Deployment"
+      "Request Submission",
+      "Admin Review",
+      "Pengecekan SOP",
+      "Review & Feedback",
+      "Approval",
+      "Open Recuitment"
     ],
     examples: [
       "Website Open Recruitment",
       "Website Event Registration",
-      "Voting System",
       "Landing Page Event"
     ]
   },
@@ -228,10 +227,9 @@ const waterfallSteps = [
 export function ItMengenalSection() {
   return (
     <>
-      <div id="itsolutions" className="mt-0" />
       <AnimatedSection
         id="it-mengenal"
-        className="relative min-h-screen overflow-hidden bg-[var(--bg-page)] px-5 pb-20 pt-32 text-[var(--text-default)] md:px-8 md:pb-24 md:pt-36 scroll-mt-20 flex flex-col justify-center section-bg-1"
+        className="relative min-h-screen overflow-hidden px-5 pb-20 pt-32 text-[#FDFDFF] md:px-8 md:pb-24 md:pt-36 scroll-mt-20 flex flex-col justify-center section-bg-1"
       >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(31,103,120,0.08),transparent_34%),radial-gradient(circle_at_88%_78%,rgba(242,183,5,0.06),transparent_32%)] pointer-events-none" />
       <div className="absolute inset-0 opacity-12 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:520px] pointer-events-none" />
@@ -250,10 +248,10 @@ export function ItMengenalSection() {
               <h2 className="font-heading text-5xl font-medium leading-[1.04] md:text-7xl">
                 IT Solutions
               </h2>
-              <p className="text-xl leading-9 text-[var(--text-muted)] md:text-2xl mt-4 max-w-2xl">
+              <p className="text-xl leading-9 text-white/76 md:text-2xl mt-4 max-w-2xl">
                 Pilar Pendukung Transformasi Digital BEM FILKOM UB
               </p>
-              <p className="text-sm md:text-base leading-8 text-[var(--text-muted)] max-w-xl">
+              <p className="text-sm md:text-base leading-8 text-white/60 max-w-xl">
                 Biro teknologi yang bertanggung jawab penuh dalam menyediakan solusi digital, 
                 ekosistem aplikasi terintegrasi, dan memelihara seluruh infrastruktur teknologi informasi 
                 untuk mendukung kelancaran program kerja BEM FILKOM.
@@ -267,21 +265,21 @@ export function ItMengenalSection() {
                 return (
                   <div
                     key={stat.label}
-                    className="rounded-xl card-surface card-light p-3 flex flex-col justify-between shadow-md backdrop-blur-md transition-all duration-300 border-[rgba(var(--primary-900-rgb),0.10)]"
+                    className="rounded-xl card-surface card-dark p-3 flex flex-col justify-between shadow-md backdrop-blur-md transition-all duration-300 border-white/12 bg-white/6"
                   >
                     <div
                       className={cn(
-                        "mb-2 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[rgba(var(--primary-900-rgb),0.06)]",
+                        "mb-2 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10",
                         stat.color === "text-yellow" ? "text-[var(--accent-500)]" : "text-[var(--primary-200)]",
                       )}
                     >
                       <Icon className="h-4.5 w-4.5" />
                     </div>
                     <div>
-                      <div className="font-heading text-2xl font-bold text-[var(--text-default)]">
+                      <div className="font-heading text-2xl font-bold text-[#FDFDFF]">
                         <Counter value={stat.value} />
                       </div>
-                      <p className="text-[10px] text-[var(--text-muted)] font-medium leading-tight mt-0.5">{stat.label}</p>
+                      <p className="text-[10px] text-white/64 font-medium leading-tight mt-0.5">{stat.label}</p>
                     </div>
                   </div>
                 );
@@ -308,7 +306,7 @@ export function ItMengenalSection() {
             <motion.div
               animate={{ y: [0, -16, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-              className="relative z-10 flex items-center justify-center p-8 md:p-12 rounded-[36px] card-surface card-light backdrop-blur-md shadow-lg border-[rgba(var(--primary-900-rgb),0.14)]"
+              className="relative z-10 flex items-center justify-center p-8 md:p-12 rounded-[36px] card-surface card-dark backdrop-blur-md shadow-lg border-white/12 bg-white/6"
             >
               <Image
                 src="/assets/logos/its-logo.png"
@@ -323,12 +321,12 @@ export function ItMengenalSection() {
         </div>
 
         {/* Bottom: Specialized Specialization Cards (6 Bidang Keahlian) */}
-        <div className="mt-24 border-t border-[rgba(var(--primary-900-rgb),0.14)] pt-16">
+        <div className="mt-24 border-t border-white/12 pt-16">
           <div className="mb-12 text-center space-y-2">
             <span className="text-xs font-bold tracking-wider text-[var(--primary-200)] uppercase">
               Technical Specialties
             </span>
-            <h3 className="font-heading text-2xl md:text-3xl font-medium text-[var(--text-default)]">6 Bidang Keahlian Biro</h3>
+            <h3 className="font-heading text-2xl md:text-3xl font-medium text-[#FDFDFF]">6 Bidang Keahlian Biro</h3>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {divisionCards.map((card) => {
@@ -336,17 +334,17 @@ export function ItMengenalSection() {
               return (
                 <div
                   key={card.name}
-                  className="group rounded-2xl card-surface card-light p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 border-[rgba(var(--primary-900-rgb),0.12)] hover:border-[rgba(var(--primary-900-rgb),0.22)]"
+                  className="group rounded-2xl card-surface card-dark p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 border-white/10 bg-white/5 hover:border-[rgba(var(--primary-900-rgb),0.22)]"
                 >
                   <div className="flex gap-4 items-start">
-                    <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(var(--primary-900-rgb),0.08)] text-[var(--primary-200)] transition-colors duration-300 group-hover:bg-[rgba(var(--primary-900-rgb),0.16)] group-hover:text-[var(--text-default)]">
+                    <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[var(--primary-200)] transition-colors duration-300 group-hover:bg-white/20">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="space-y-1.5">
-                      <h4 className="font-heading text-base font-semibold text-[var(--text-default)] group-hover:text-[var(--primary-200)] transition-colors">
+                      <h4 className="font-heading text-base font-semibold text-[#FDFDFF] group-hover:text-[var(--primary-200)] transition-colors">
                         {card.name}
                       </h4>
-                      <p className="text-xs leading-5 text-[var(--text-muted)]">
+                      <p className="text-xs leading-5 text-white/64">
                         {card.desc}
                       </p>
                     </div>
@@ -369,7 +367,7 @@ export function ItVisiMisiSection() {
   return (
     <AnimatedSection
       id="it-visi-misi"
-      className="bg-[linear-gradient(180deg,var(--bg-surface),rgba(var(--primary-900-rgb),0.02))] text-[var(--text-default)] scroll-mt-20 section-bg-2"
+      className="bg-[linear-gradient(180deg,var(--bg-surface),rgba(var(--primary-900-rgb),0.02))] text-[var(--text-default)] section-bg-2"
     >
       <div className="absolute inset-0 opacity-10 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(31,103,120,0.06),transparent_40%)] pointer-events-none" />
@@ -420,7 +418,7 @@ export function ItVisiMisiSection() {
                 className="relative z-10 flex flex-col items-center text-center p-6 rounded-2xl border border-[rgba(var(--primary-900-rgb),0.12)] bg-[var(--bg-surface)] backdrop-blur-md hover:border-[rgba(var(--primary-900-rgb),0.30)] transition-colors"
               >
                 <div className="relative mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--bg-surface)] border border-[rgba(var(--primary-900-rgb),0.14)] shadow-md">
-                  <span className="font-heading text-2xl font-bold text-[var(--primary-200)]">
+                  <span className="font-heading text-2xl font-bold text-[var(--primary-900)]">
                     <Counter value={kr.value} suffix={kr.suffix} />
                   </span>
                 </div>
@@ -466,14 +464,14 @@ export function ItProkerSection() {
   };
 
   return (
-    <AnimatedSection id="it-proker" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20 section-bg-3">
+    <AnimatedSection id="it-proker" className="bg-[var(--bg-surface)] text-[var(--text-default)] section-bg-3">
       <div className="absolute inset-0 opacity-8 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(31,103,120,0.06),transparent_40%)] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-4">
-            <span className="text-xs font-bold tracking-wider text-[var(--primary-200)] uppercase">
+            <span className="text-xs font-bold tracking-wider text-[var(--primary-900)] uppercase">
               03 // Rencana Kerja Strategis
             </span>
             <h3 className="font-heading text-3xl font-medium text-[var(--text-default)]">Program Kerja IT Solutions</h3>
@@ -526,7 +524,7 @@ export function ItProkerSection() {
                 {/* Header */}
                   <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-200)]">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-900)]">
                       <ProgramIcon className="h-6 w-6" />
                     </span>
                     <h4 className="font-heading text-xl font-semibold text-[var(--text-default)]">{prog.title}</h4>
@@ -550,11 +548,11 @@ export function ItProkerSection() {
                         </div>
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-[var(--primary-200)] block mb-2 uppercase">Tujuan</span>
+                        <span className="text-xs font-bold text-[var(--primary-900)] block mb-2 uppercase">Tujuan</span>
                         <ul className="grid gap-2">
                           {prog.goals.map((g) => (
                             <li key={g} className="flex gap-2 text-xs text-[var(--text-muted)] leading-normal items-start">
-                              <Check className="h-4 w-4 text-[var(--primary-200)] shrink-0 mt-0.5" />
+                              <Check className="h-4 w-4 text-[var(--primary-900)] shrink-0 mt-0.5" />
                               <span>{g}</span>
                             </li>
                           ))}
@@ -571,7 +569,7 @@ export function ItProkerSection() {
                         <div className="grid grid-cols-2 gap-2">
                           {prog.apps.map((app) => (
                             <div key={app.name} className="p-2.5 rounded-xl border-[rgba(var(--primary-900-rgb),0.10)] bg-[var(--bg-card)]">
-                              <span className="block text-xs font-bold text-[var(--primary-200)]">{app.name}</span>
+                              <span className="block text-xs font-bold text-[var(--primary-900)]">{app.name}</span>
                               <span className="block text-[10px] text-[var(--text-muted)] mt-0.5 leading-tight">{app.detail}</span>
                             </div>
                           ))}
@@ -580,13 +578,13 @@ export function ItProkerSection() {
 
                       {/* Animated flow visual: User -> App -> Process -> Result */}
                       <div>
-                        <span className="text-xs font-bold text-[var(--primary-200)] block mb-3 uppercase">Aliran Data Aplikasi</span>
+                        <span className="text-xs font-bold text-[var(--primary-900)] block mb-3 uppercase">Aliran Data Aplikasi</span>
                         <div className="relative flex justify-between items-center rounded-2xl bg-[var(--bg-card)] border-[var(--card-border)] p-3">
                           {prog.flow.map((step) => {
                             const FlowIcon = step.icon;
                             return (
                               <div key={step.label} className="flex flex-col items-center z-10">
-                                <div className="h-9 w-9 rounded-xl bg-[var(--bg-surface)] border-[var(--card-border)] flex items-center justify-center text-[var(--primary-200)] shadow-sm">
+                                <div className="h-9 w-9 rounded-xl bg-[var(--bg-surface)] border-[var(--card-border)] flex items-center justify-center text-[var(--primary-900)] shadow-sm">
                                   <FlowIcon className="h-4.5 w-4.5" />
                                 </div>
                                 <span className="text-[10px] text-[var(--text-muted)] mt-1.5 font-medium">{step.label}</span>
@@ -623,14 +621,14 @@ export function ItProkerSection() {
                         <div className="grid grid-cols-2 gap-2">
                           {prog.workflow.map((w, idx) => (
                             <div key={w} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border-[var(--card-border)] bg-[var(--bg-card)]">
-                              <span className="text-[10px] font-bold h-4 w-4 bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-200)] rounded-full flex items-center justify-center shrink-0">{idx + 1}</span>
+                              <span className="text-[10px] font-bold h-4 w-4 bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-900)] rounded-full flex items-center justify-center shrink-0">{idx + 1}</span>
                               <span className="text-[11px] font-medium text-[var(--text-muted)]">{w}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-[var(--primary-200)] block mb-2 uppercase">Contoh Layanan</span>
+                        <span className="text-xs font-bold text-[var(--primary-900)] block mb-2 uppercase">Contoh Layanan</span>
                         <div className="flex flex-wrap gap-1.5">
                           {prog.examples.map((ex) => (
                             <span key={ex} className="text-[11px] bg-[rgba(var(--primary-900-rgb),0.06)] border-[rgba(var(--primary-900-rgb),0.12)] px-2.5 py-1 rounded-full text-[var(--text-muted)]">{ex}</span>
@@ -655,11 +653,11 @@ export function ItProkerSection() {
                         </div>
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-[var(--primary-200)] block mb-2 uppercase">Tujuan Program</span>
+                        <span className="text-xs font-bold text-[var(--primary-900)] block mb-2 uppercase">Tujuan Program</span>
                         <ul className="grid gap-2">
                           {prog.goals.map((g) => (
                             <li key={g} className="flex gap-2 text-xs text-[var(--text-muted)] leading-normal items-start">
-                              <Check className="h-4 w-4 text-[var(--primary-200)] shrink-0 mt-0.5" />
+                              <Check className="h-4 w-4 text-[var(--primary-900)] shrink-0 mt-0.5" />
                               <span>{g}</span>
                             </li>
                           ))}
@@ -672,7 +670,7 @@ export function ItProkerSection() {
                 {/* Card Footer / Status indicator */}
                   <div className="flex items-center justify-between mt-2 pt-2 border-t border-[var(--card-border)]">
                   <span className="text-[11px] text-[var(--text-muted)] font-medium">BEM FILKOM UB</span>
-                  <span className="text-[11px] text-[var(--primary-200)] font-semibold tracking-wide uppercase">Active Program</span>
+                  <span className="text-[11px] text-[var(--primary-900)] font-semibold tracking-wide uppercase">Active Program</span>
                 </div>
               </div>
             );
@@ -688,7 +686,7 @@ export function ItProkerSection() {
 // ==========================================
 export function ItWorkflowSection() {
   return (
-    <AnimatedSection id="it-workflow" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20 section-bg-4">
+    <AnimatedSection id="it-workflow" className="bg-[var(--bg-surface)] text-[var(--text-default)] section-bg-4">
       <div className="absolute inset-0 opacity-10 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(87,212,221,0.12),transparent_40%)] pointer-events-none" />
 
@@ -719,11 +717,11 @@ export function ItWorkflowSection() {
                   <div>
                     <div className="flex justify-between items-start mb-4">
                       <span className="font-heading text-xs font-bold text-[var(--primary-900)]">{step.step}</span>
-                      <div className="h-8 w-8 rounded-lg bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-200)] flex items-center justify-center">
+                      <div className="h-8 w-8 rounded-lg bg-[rgba(var(--primary-900-rgb),0.06)] text-[var(--primary-900)] flex items-center justify-center">
                         <StepIcon className="h-4.5 w-4.5" />
                       </div>
                     </div>
-                    <h4 className="font-heading text-base font-semibold text-[var(--text-default)] group-hover:text-[var(--primary-200)] transition-colors leading-tight mb-2">
+                    <h4 className="font-heading text-base font-semibold text-[var(--text-default)] group-hover:text-[var(--primary-900)] transition-colors leading-tight mb-2">
                       {step.title}
                     </h4>
                     <p className="text-[11px] leading-5 text-[var(--text-muted)]">
@@ -734,7 +732,7 @@ export function ItWorkflowSection() {
                   {/* Connective arrows for desktop layout */}
                   {idx < 5 && (
                     <div className="hidden lg:flex absolute top-1/2 -right-3 -translate-y-1/2 z-20 items-center justify-center text-[rgba(var(--primary-900-rgb),0.30)]">
-                      <ArrowRight className="h-4.5 w-4.5 group-hover:text-[var(--primary-200)] group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="h-4.5 w-4.5 group-hover:text-[var(--primary-900)] group-hover:translate-x-0.5 transition-all" />
                     </div>
                   )}
                 </motion.div>
@@ -751,7 +749,7 @@ export function ItWorkflowSection() {
             className="rounded-3xl border border-[rgba(var(--primary-900-rgb),0.12)] bg-[rgba(var(--primary-900-rgb),0.06)] p-6 backdrop-blur-md"
           >
             <div className="flex gap-4 items-start">
-              <div className="h-10 w-10 rounded-2xl bg-[rgba(var(--primary-900-rgb),0.06)] flex items-center justify-center text-[var(--primary-200)] shrink-0">
+              <div className="h-10 w-10 rounded-2xl bg-[rgba(var(--primary-900-rgb),0.06)] flex items-center justify-center text-[var(--primary-900)] shrink-0">
                 <Activity className="h-5 w-5 animate-pulse" />
               </div>
               <div className="space-y-1.5">

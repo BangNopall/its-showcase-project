@@ -5,18 +5,17 @@ export function ClosingSection() {
   return (
     <section
       id="closing"
-      className="relative overflow-hidden bg-[#393D3F] px-5 py-24 text-[#FDFDFF] md:px-8 md:py-32"
+      className="relative min-h-screen w-full overflow-hidden bg-[#393D3F] px-5 py-24 text-[#FDFDFF] md:px-8 md:py-32 flex flex-col justify-center snap-start snap-always"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(87,212,221,0.22),transparent_34%),radial-gradient(circle_at_86%_84%,rgba(242,183,5,0.18),transparent_32%)]" />
       <div className="absolute inset-0 opacity-12 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:520px]" />
       <div className="relative mx-auto max-w-5xl text-center">
         <div className="mb-9 flex items-center justify-center gap-5">
           <Image
-            src="/assets/logos/sge-logo-symbol-cream.png"
+            src="/assets/logos/sge-logo-symbol-primary.svg"
             alt="SGE FILKOM UB"
             width={72}
             height={72}
-            className="rounded-full"
           />
           <Image
             src="/assets/logos/its-logo.png"

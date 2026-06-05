@@ -5,7 +5,7 @@ import { screenshotPaths } from "@/lib/utils";
 
 export function WebsiteOverviewSection() {
   return (
-    <AnimatedSection id="overview" className="bg-[#FFEFD3] section-bg-1">
+    <AnimatedSection id="overview" className="bg-[#FFEFD3] section-bg-4">
       <div className="absolute inset-0 opacity-30 [background-image:url('/assets/patterns/pattern-cream.png')] [background-size:540px]" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader

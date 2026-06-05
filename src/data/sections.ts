@@ -1,5 +1,5 @@
 export const sectionNav = [
-  { id: "itsolutions", label: "Home" },
+  { id: "it-mengenal", label: "Home" },
   { id: "hero", label: "Context" },
   { id: "features", label: "Features" },
   { id: "overview", label: "Showcase" },

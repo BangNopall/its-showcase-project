@@ -6,11 +6,10 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-4">
           <Image
-            src="/assets/logos/sge-logo-symbol-cream.png"
+            src="/assets/logos/sge-logo-symbol-primary.svg"
             alt="SGE FILKOM UB"
             width={48}
             height={48}
-            className="rounded-full"
           />
           <div>
             <p className="font-heading text-lg font-medium">Website BEM FILKOM UB Showcase</p>
