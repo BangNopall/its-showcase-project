@@ -5,7 +5,7 @@ import { screenshotPaths } from "@/lib/utils";
 
 export function AdminPortalSection() {
   return (
-    <AnimatedSection id="admin-portal" className="bg-[#FDFDFF]">
+    <AnimatedSection id="admin-portal" className="bg-[#FDFDFF] section-bg-4">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Admin Portal"

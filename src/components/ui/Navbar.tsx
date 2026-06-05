@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [active, setActive] = useState("hero");
   const [open, setOpen] = useState(false);
+  const isContextActive = active === "hero";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,7 +33,12 @@ export function Navbar() {
 
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-4">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-2xl shadow-black/15 backdrop-blur-2xl nav-surface">
+      <nav
+        className={cn(
+          "mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-2xl shadow-black/15 backdrop-blur-2xl nav-surface",
+          isContextActive && "nav-context",
+        )}
+      >
           <Link href="#hero" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]">
             <span className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full bg-[var(--color-cream)]">
             <Image
@@ -59,7 +65,7 @@ export function Navbar() {
               href={`#${item.id}`}
               className={cn(
                   "rounded-full px-3 py-2 text-xs font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--text-on-primary)]",
-                  active === item.id && "nav-link-active",
+                  active === item.id && item.id === "hero" && "nav-link-active",
                 )}
             >
               {item.label}
@@ -89,7 +95,12 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl p-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden nav-surface">
+        <div
+          className={cn(
+            "mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl p-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden nav-surface",
+            isContextActive && "nav-context",
+          )}
+        >
           {sectionNav.map((item) => (
             <Link
               key={item.id}
@@ -97,7 +108,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className={cn(
                 "rounded-2xl px-4 py-3 text-sm font-semibold text-[var(--text-muted)] transition hover:bg-[rgba(var(--neutral-900-rgb),0.06)] hover:text-[var(--text-on-primary)]",
-                active === item.id && "nav-link-active",
+                active === item.id && item.id === "hero" && "nav-link-active",
               )}
             >
               {item.label}

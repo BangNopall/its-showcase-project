@@ -5,7 +5,7 @@ import { screenshotPaths } from "@/lib/utils";
 
 export function NewsShowcaseSection() {
   return (
-    <AnimatedSection id="news" className="bg-[#FDFDFF]">
+    <AnimatedSection id="news" className="bg-[#FDFDFF] section-bg-2">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="News Publication"

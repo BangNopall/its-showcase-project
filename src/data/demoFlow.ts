@@ -16,8 +16,13 @@ export const demoLinks = [
     note: "Homepage, news, detail news, and public features.",
   },
   {
-    label: "Admin Portal Event Request",
-    url: "https://bemfilkom.ub.ac.id/adminevent",
+    label: "Event",
+    url: "https://bemfilkom.ub.ac.id/event",
+    note: "Use only when safe dummy data is available.",
+  },
+  {
+    label: "News",
+    url: "https://bemfilkom.ub.ac.id/news",
     note: "Use only when safe dummy data is available.",
   },
 ];

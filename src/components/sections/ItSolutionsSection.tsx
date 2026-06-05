@@ -114,7 +114,7 @@ const keyResults = [
 const programs = [
   {
     id: "maintenance",
-    title: "Maintenance Website BEM",
+    title: "Website BEM",
     icon: Globe,
     desc: "Mengembangkan dan memelihara website utama BEM FILKOM sebagai pusat informasi organisasi.",
     features: ["Homepage Preview", "News Management", "Event Management", "Organization Profile"],
@@ -231,7 +231,7 @@ export function ItMengenalSection() {
       <div id="itsolutions" className="mt-0" />
       <AnimatedSection
         id="it-mengenal"
-        className="relative min-h-screen overflow-hidden bg-[var(--bg-page)] px-5 pb-20 pt-32 text-[var(--text-default)] md:px-8 md:pb-24 md:pt-36 scroll-mt-20 flex flex-col justify-center"
+        className="relative min-h-screen overflow-hidden bg-[var(--bg-page)] px-5 pb-20 pt-32 text-[var(--text-default)] md:px-8 md:pb-24 md:pt-36 scroll-mt-20 flex flex-col justify-center section-bg-1"
       >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(31,103,120,0.08),transparent_34%),radial-gradient(circle_at_88%_78%,rgba(242,183,5,0.06),transparent_32%)] pointer-events-none" />
       <div className="absolute inset-0 opacity-12 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:520px] pointer-events-none" />
@@ -369,7 +369,7 @@ export function ItVisiMisiSection() {
   return (
     <AnimatedSection
       id="it-visi-misi"
-      className="bg-[linear-gradient(180deg,var(--bg-surface),rgba(var(--primary-900-rgb),0.02))] text-[var(--text-default)] scroll-mt-20"
+      className="bg-[linear-gradient(180deg,var(--bg-surface),rgba(var(--primary-900-rgb),0.02))] text-[var(--text-default)] scroll-mt-20 section-bg-2"
     >
       <div className="absolute inset-0 opacity-10 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(31,103,120,0.06),transparent_40%)] pointer-events-none" />
@@ -466,7 +466,7 @@ export function ItProkerSection() {
   };
 
   return (
-    <AnimatedSection id="it-proker" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20">
+    <AnimatedSection id="it-proker" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20 section-bg-3">
       <div className="absolute inset-0 opacity-8 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(31,103,120,0.06),transparent_40%)] pointer-events-none" />
 
@@ -688,7 +688,7 @@ export function ItProkerSection() {
 // ==========================================
 export function ItWorkflowSection() {
   return (
-    <AnimatedSection id="it-workflow" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20">
+    <AnimatedSection id="it-workflow" className="bg-[var(--bg-surface)] text-[var(--text-default)] scroll-mt-20 section-bg-4">
       <div className="absolute inset-0 opacity-10 [background-image:url('/assets/patterns/pattern-teal.png')] [background-size:500px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(87,212,221,0.12),transparent_40%)] pointer-events-none" />
 

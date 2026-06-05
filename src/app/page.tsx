@@ -50,9 +50,9 @@ export default function Home() {
         <AdminPortalSection />
         {/* <DevelopmentProcessSection />
         <ProgressHighlightSection /> */}
-        <TechStackSection />
-        <LiveDemoSection />
+        {/* <TechStackSection /> */}
         <ImpactSection />
+        <LiveDemoSection />
         {/* <ChallengesSection />
         <FutureImprovementSection /> */}
         <ClosingSection />
