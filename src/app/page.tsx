@@ -17,6 +17,7 @@ import { Footer } from "@/components/ui/Footer";
 import { KeyboardNavigation } from "@/components/ui/KeyboardNavigation";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { SectionIndicator } from "@/components/ui/SectionIndicator";
+import { SplashScreen } from "@/components/ui/SplashScreen";
 import {
   ItMengenalSection,
   ItProkerSection,
@@ -26,6 +27,7 @@ import {
 export default function Home() {
   return (
     <>
+      <SplashScreen />
       <ScrollProgress />
       <CinematicScroll />
       <KeyboardNavigation />

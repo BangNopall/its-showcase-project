@@ -17,7 +17,7 @@ export function SectionIndicator() {
   // Track the active section using distance-based detection for reliability
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
+      () => {
         // Instead of relying solely on intersectionRatio, find the section
         // whose center is closest to the viewport center for more reliable
         // detection of shorter sections like NewsShowcase.
@@ -92,13 +92,12 @@ export function SectionIndicator() {
     const el = document.getElementById(id);
     if (el) {
       // Temporarily disable scroll-snap to prevent fighting with scrollIntoView
-      const htmlEl = document.documentElement;
-      htmlEl.style.scrollSnapType = "none";
+      document.documentElement.style.setProperty("scroll-snap-type", "none");
 
       el.scrollIntoView({ behavior: "smooth", block: "start" });
 
       setTimeout(() => {
-        htmlEl.style.scrollSnapType = "";
+        document.documentElement.style.removeProperty("scroll-snap-type");
         el.focus({ preventScroll: true });
       }, 700);
 

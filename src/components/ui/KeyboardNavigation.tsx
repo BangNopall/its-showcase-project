@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { allSectionIds, sectionLabels } from "@/data/sections";
+import { allSectionIds } from "@/data/sections";
 
 /**
  * Finds the index of the section currently closest to viewport center.
@@ -32,8 +32,6 @@ function findClosestSectionIndex(): number {
 export function KeyboardNavigation() {
   const [showHint, setShowHint] = useState(false);
   const [hintDismissed, setHintDismissed] = useState(false);
-  const [currentSection, setCurrentSection] = useState(0);
-  const [showIndicator, setShowIndicator] = useState(false);
 
   // Show the onboarding hint after initial load
   useEffect(() => {
@@ -52,40 +50,6 @@ export function KeyboardNavigation() {
     };
   }, []);
 
-  // Track active section via IntersectionObserver for the indicator
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      () => {
-        const viewportCenter = window.innerHeight / 2;
-        let closestIdx = 0;
-        let closestDist = Infinity;
-
-        allSectionIds.forEach((id, idx) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          const rect = el.getBoundingClientRect();
-          if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-          const sectionCenter = rect.top + rect.height / 2;
-          const dist = Math.abs(sectionCenter - viewportCenter);
-          if (dist < closestDist) {
-            closestDist = dist;
-            closestIdx = idx;
-          }
-        });
-
-        setCurrentSection(closestIdx);
-      },
-      { rootMargin: "-10% 0px -10% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] },
-    );
-
-    allSectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const navigateToSection = useCallback((index: number) => {
     const clamped = Math.max(0, Math.min(index, allSectionIds.length - 1));
     const targetId = allSectionIds[clamped];
@@ -95,21 +59,15 @@ export function KeyboardNavigation() {
       // Temporarily disable scroll-snap to prevent it from fighting with
       // scrollIntoView. Mandatory snap causes a "double correction" jump
       // when the smooth scroll position triggers snap recalculation.
-      const htmlEl = document.documentElement;
-      htmlEl.style.scrollSnapType = "none";
+      document.documentElement.style.setProperty("scroll-snap-type", "none");
 
       el.scrollIntoView({ behavior: "smooth", block: "start" });
 
       // Re-enable snap after scroll settles, then focus for accessibility
       setTimeout(() => {
-        htmlEl.style.scrollSnapType = "";
+        document.documentElement.style.removeProperty("scroll-snap-type");
         el.focus({ preventScroll: true });
       }, 700);
-
-      setCurrentSection(clamped);
-      // Show the indicator briefly on navigation
-      setShowIndicator(true);
-      setTimeout(() => setShowIndicator(false), 2500);
     }
   }, []);
 
